@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Productos | Administración</title><link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/admin.css">
+  </head>
+
+  <body data-admin-page="products">
+    <div class="admin-shell">
+      <aside class="admin-side"><img src="../assets/img/logo.svg" alt="D'Paniagua Technology" class="admin-logo">
+        <nav>
+  <a href="dashboard.html">▦ Dashboard</a><a class="active" href="productos.html">▣ Productos</a><a href="pedidos.html">▤ Pedidos</a><a href="usuarios.html">♙ Usuarios</a><a href="resenas.html">☆ Reseñas</a><a href="combos.html">✦ Ofertas y combos</a><a href="../index.html">↗ Ver tienda</a><a href="#" id="logoutBtn">Cerrar sesión</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <div id="adminNotice" class="notice">Verificando permisos administrativos…
+        </div>
+        <div data-admin-content class="hidden">
+  
+          <header class="admin-heading">
+            <div><span class="eyebrow">D'Paniagua · Administración</span>
+              <h1>Productos
+              </h1>
+              <p class="muted">Crea productos y edita todos sus datos desde un formulario.
+              </p>
+            </div>
+          </header>
+
+  
+          <details class="panel admin-content" open>
+            <summary class="admin-summary">Registrar producto
+            </summary>
+            <form id="productCreate" class="admin-form-grid">
+    
+              <label class="field"><span>Nombre</span><input name="name" required maxlength="160">
+              </label>
+              <label class="field"><span>Marca</span><input name="brand" maxlength="120">
+              </label>
+              <label class="field"><span>Categoría</span><select name="category_id" id="productCategory" required><option value="">Cargando…</option></select>
+              </label>
+
+    
+              <label class="field"><span>Precio base (RD$)</span><input name="base_price" type="number" min="0" step=".01" required>
+              </label>
+              <label class="field"><span>Descuento (%)</span><input name="discount_percent" type="number" min="0" max="100" step="any" value="0" placeholder="Ejemplo: 15">
+              </label>
+              <p class="field-wide small muted" data-offer-preview aria-live="polite">Ingresa un precio base para calcular el precio final.</p>
+              <label class="field"><span>Inventario</span><input name="stock" type="number" min="0" step="1" required>
+              </label>
+
+    
+              <label class="field"><span>Imagen principal (URL)</span><input name="image_url" type="url" placeholder="https://…" required>
+              </label>
+              <label class="field"><span>Imágenes adicionales (URLs, separadas por línea)</span><textarea name="image_urls" rows="2"></textarea>
+              </label>
+              <label class="field"><span>Etiqueta de oferta</span><input name="offer_label" placeholder="Oferta, Nuevo…" maxlength="60">
+              </label>
+
+    
+              <label class="field"><span>Características (una por línea)</span><textarea name="features_text" rows="3"></textarea>
+              </label>
+              <label class="field field-wide"><span>Descripción</span><textarea name="description" rows="3" required></textarea>
+              </label>
+              <label class="field"><span>Estado del producto</span><select name="status"><option value="active">Activo</option><option value="inactive">Inactivo</option><option value="archived">Archivado</option></select>
+              </label>
+              <label class="check-field"><input name="is_published" type="checkbox" checked> Publicar en la tienda
+              </label>
+
+    
+              <div class="field-wide"><button class="primary" type="submit">Guardar producto</button>
+              </div>
+
+  
+            </form>
+          </details>
+
+  
+          <section class="panel admin-content">
+            <div class="admin-section-head">
+              <div>
+                <h2>Inventario
+                </h2>
+                <p class="small muted">Disponibilidad calculada a partir del stock actual.
+                </p>
+              </div>
+<input id="productSearch" class="admin-search" type="search" placeholder="Buscar producto o marca">
+            </div>
+            <div id="adminTable">
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <dialog id="productEditor" class="admin-dialog">
+      <form id="productEditForm">
+        <div class="admin-dialog-head">
+          <div><span class="eyebrow">Catálogo</span>
+            <h2>Editar producto
+            </h2>
+          </div>
+<button type="button" class="icon-btn" data-close-dialog aria-label="Cerrar">×</button>
+        </div>
+<input type="hidden" name="id">
+        <div class="admin-form-grid">
+  
+          <label class="field"><span>Nombre</span><input name="name" required maxlength="160">
+          </label>
+          <label class="field"><span>Marca</span><input name="brand" maxlength="120">
+          </label>
+          <label class="field"><span>Categoría</span><select name="category_id" required></select>
+          </label>
+
+  
+          <label class="field"><span>Precio base (RD$)</span><input name="base_price" type="number" min="0" step=".01" required>
+          </label>
+          <label class="field"><span>Descuento (%)</span><input name="discount_percent" type="number" min="0" max="100" step="any" value="0" placeholder="Ejemplo: 15">
+          </label>
+          <p class="field-wide small muted" data-offer-preview aria-live="polite">Ingresa un precio base para calcular el precio final.</p>
+          <label class="field"><span>Inventario</span><input name="stock" type="number" min="0" step="1" required>
+          </label>
+
+  
+          <label class="field"><span>Imagen principal (URL)</span><input name="image_url" type="url" required>
+          </label>
+          <label class="field"><span>Imágenes adicionales (una URL por línea)</span><textarea name="image_urls" rows="3"></textarea>
+          </label>
+          <label class="field"><span>Etiqueta de oferta</span><input name="offer_label" maxlength="60">
+          </label>
+
+  
+          <label class="field"><span>Características (una por línea)</span><textarea name="features_text" rows="4"></textarea>
+          </label>
+          <label class="field field-wide"><span>Descripción</span><textarea name="description" rows="4" required></textarea>
+          </label>
+          <label class="field"><span>Estado</span><select name="status"><option value="active">Activo</option><option value="inactive">Inactivo</option><option value="archived">Archivado</option></select>
+          </label>
+          <label class="check-field"><input name="is_published" type="checkbox"> Publicado
+          </label>
+
+  
+          <div class="field-wide dialog-actions"><button type="button" class="btn-outline" data-close-dialog>Cancelar</button><button type="submit" class="primary">Guardar cambios</button>
+          </div>
+
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase.js"></script><script src="../js/catalogo-demo.js"></script><script src="../js/global.js"></script><script src="../js/carrito.js"></script><script src="../js/autenticacion.js"></script><script src="../js/admin.js"></script>
+  </body>
+</html>

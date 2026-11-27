@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard | Administración</title><link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/admin.css">
+  </head>
+
+  <body data-admin-page="dashboard">
+    <div class="admin-shell">
+  
+      <aside class="admin-side"><img src="../assets/img/logo.svg" alt="D'Paniagua Technology" class="admin-logo">
+        <nav>
+    <a class="active" href="dashboard.html">▦ Dashboard</a><a href="productos.html">▣ Productos</a><a href="pedidos.html">▤ Pedidos</a><a href="usuarios.html">♙ Usuarios</a><a href="resenas.html">☆ Reseñas</a><a href="combos.html">✦ Ofertas y combos</a><a href="../index.html">↗ Ver tienda</a><a href="#" id="logoutBtn">Cerrar sesión</a>
+  
+        </nav>
+      </aside>
+
+  
+      <main class="admin-main">
+        <div id="adminNotice" class="notice">Verificando permisos administrativos…
+        </div>
+        <div data-admin-content class="hidden">
+    
+          <header class="admin-heading">
+            <div><span class="eyebrow">D'Paniagua · Administración</span>
+              <h1>Dashboard
+              </h1>
+              <p class="muted">Indicadores calculados con los registros actuales de Supabase.
+              </p>
+            </div>
+          </header>
+
+    
+          <section class="stats-grid" aria-label="Indicadores de la tienda">
+      
+            <article class="stat-card"><span>Ventas confirmadas</span><strong id="stat-sales">—</strong>
+            </article>
+            <article class="stat-card"><span>Ingresos de hoy</span><strong id="stat-today">—</strong>
+            </article>
+            <article class="stat-card"><span>Ingresos del mes</span><strong id="stat-month">—</strong>
+            </article>
+            <article class="stat-card"><span>Total de pedidos</span><strong id="stat-orders">—</strong>
+            </article>
+
+      
+            <article class="stat-card"><span>Pendientes</span><strong id="stat-pending">—</strong>
+            </article>
+            <article class="stat-card"><span>Completados</span><strong id="stat-completed">—</strong>
+            </article>
+            <article class="stat-card"><span>Productos</span><strong id="stat-products">—</strong>
+            </article>
+            <article class="stat-card"><span>Poco inventario (≤ 5)</span><strong id="stat-low-stock">—</strong>
+            </article>
+
+      
+            <article class="stat-card"><span>Agotados</span><strong id="stat-out-stock">—</strong>
+            </article>
+            <article class="stat-card"><span>Usuarios registrados</span><strong id="stat-users">—</strong>
+            </article>
+            <article class="stat-card"><span>Combos publicados</span><strong id="stat-bundles">—</strong>
+            </article>
+            <article class="stat-card"><span>Reseñas</span><strong id="stat-reviews">—</strong>
+            </article>
+
+    
+          </section>
+
+    
+          <div class="admin-two-col admin-content">
+            <section class="panel">
+              <h2>Ingresos confirmados · últimos 7 días
+              </h2>
+              <p class="small muted">Solo suma pedidos con pago confirmado.
+              </p>
+              <div id="dailyChart" class="chart-bars" aria-label="Gráfico diario">
+              </div>
+            </section>
+            <section class="panel">
+              <h2>Ingresos confirmados · últimos 6 meses
+              </h2>
+              <div id="monthlyChart" class="chart-bars" aria-label="Gráfico mensual">
+              </div>
+              <p id="incomeComparison" class="small muted">
+              </p>
+            </section>
+          </div>
+
+    
+          <div class="admin-two-col admin-content">
+            <section class="panel">
+              <h2>Productos más vendidos
+              </h2>
+              <div id="topProducts" class="admin-list">
+              </div>
+            </section>
+            <section class="panel">
+              <h2>Categorías más vendidas
+              </h2>
+              <div id="topCategories" class="admin-list">
+              </div>
+            </section>
+          </div>
+
+    
+          <section class="panel admin-content">
+            <h2>Actividad reciente
+            </h2>
+            <div id="recentActivity" class="admin-list">
+            </div>
+          </section>
+
+  
+        </div>
+      </main>
+
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase.js"></script><script src="../js/catalogo-demo.js"></script><script src="../js/global.js"></script><script src="../js/carrito.js"></script><script src="../js/autenticacion.js"></script><script src="../js/admin.js"></script>
+  </body>
+</html>

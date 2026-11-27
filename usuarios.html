@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Usuarios | Administración</title><link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/admin.css">
+  </head>
+
+  <body data-admin-page="users">
+    <div class="admin-shell">
+      <aside class="admin-side"><img src="../assets/img/logo.svg" alt="D'Paniagua Technology" class="admin-logo">
+        <nav>
+  <a href="dashboard.html">▦ Dashboard</a><a href="productos.html">▣ Productos</a><a href="pedidos.html">▤ Pedidos</a><a class="active" href="usuarios.html">♙ Usuarios</a><a href="resenas.html">☆ Reseñas</a><a href="combos.html">✦ Ofertas y combos</a><a href="../index.html">↗ Ver tienda</a><a href="#" id="logoutBtn">Cerrar sesión</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <div id="adminNotice" class="notice">Verificando permisos administrativos…
+        </div>
+        <div data-admin-content class="hidden">
+  
+          <header class="admin-heading">
+            <div><span class="eyebrow">D'Paniagua · Administración</span>
+              <h1>Usuarios
+              </h1>
+              <p class="muted">El correo se consulta en servidor. No se muestran ni se editan contraseñas.
+              </p>
+            </div>
+          </header>
+
+  
+          <section class="panel admin-content">
+            <div class="admin-toolbar"><input id="userSearch" class="admin-search" type="search" placeholder="Buscar nombre, correo o teléfono"><select id="userRoleFilter"><option value="">Todos los roles</option><option value="admin">Administrador</option><option value="customer">Cliente</option></select><select id="userStateFilter"><option value="">Todos los estados</option><option value="true">Activos</option><option value="false">Desactivados</option></select>
+            </div>
+            <div id="adminTable">
+            </div>
+            <p class="small muted">Para listar y administrar cuentas de Auth, despliega la Edge Function <code>admin-users</code>. Consulta <code>GUIA-ADMIN-USUARIOS.md</code>.
+            </p>
+          </section>
+
+        </div>
+      </main>
+    </div>
+    <dialog id="userEditor" class="admin-dialog">
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase.js"></script><script src="../js/catalogo-demo.js"></script><script src="../js/global.js"></script><script src="../js/carrito.js"></script><script src="../js/autenticacion.js"></script><script src="../js/admin.js"></script>
+  </body>
+</html>

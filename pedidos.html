@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pedidos | Administración</title><link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/admin.css">
+  </head>
+
+  <body data-admin-page="orders">
+    <div class="admin-shell">
+      <aside class="admin-side"><img src="../assets/img/logo.svg" alt="D'Paniagua Technology" class="admin-logo">
+        <nav>
+  <a href="dashboard.html">▦ Dashboard</a><a href="productos.html">▣ Productos</a><a class="active" href="pedidos.html">▤ Pedidos</a><a href="usuarios.html">♙ Usuarios</a><a href="resenas.html">☆ Reseñas</a><a href="combos.html">✦ Ofertas y combos</a><a href="../index.html">↗ Ver tienda</a><a href="#" id="logoutBtn">Cerrar sesión</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <div id="adminNotice" class="notice">Verificando permisos administrativos…
+        </div>
+        <div data-admin-content class="hidden">
+  
+          <header class="admin-heading">
+            <div><span class="eyebrow">D'Paniagua · Administración</span>
+              <h1>Pedidos
+              </h1>
+              <p class="muted">Los cambios de estado, dirección, pago e inventario se guardan con historial.
+              </p>
+            </div>
+          </header>
+
+  
+          <section class="panel admin-content">
+            <div class="admin-toolbar"><input id="orderSearch" class="admin-search" type="search" placeholder="Número, cliente o teléfono"><input id="orderFrom" type="date" aria-label="Desde"><input id="orderTo" type="date" aria-label="Hasta"><select id="orderStatusFilter"><option value="">Todos los estados</option><option value="pending">Pendiente</option><option value="confirmed">Confirmado</option><option value="processing">Preparando</option><option value="shipped">En camino</option><option value="completed">Entregado</option><option value="cancelled">Cancelado</option></select><select id="paymentStatusFilter"><option value="">Todos los pagos</option><option value="pending">Pago pendiente</option><option value="confirmed">Pago confirmado</option><option value="rejected">Pago rechazado</option><option value="refunded">Reembolsado</option></select>
+            </div>
+            <div id="adminTable">
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+    <dialog id="orderEditor" class="admin-dialog admin-dialog-wide">
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase.js"></script><script src="../js/catalogo-demo.js"></script><script src="../js/global.js"></script><script src="../js/carrito.js"></script><script src="../js/autenticacion.js"></script><script src="../js/admin.js"></script>
+  </body>
+</html>

@@ -1,92 +1,79 @@
 <!doctype html>
 
 <html lang="es">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="D'Paniagua Technology: tienda de tecnología y electrodomésticos."><title>Iniciar sesión | D'Paniagua Technology</title><link rel="icon" href="assets/img/logo.svg"><link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/global.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Acceso administrativo de D'Paniagua Technology.">
+    <title>Acceso de administrador | D'Paniagua Technology</title>
+    <link rel="icon" href="../assets/img/logo.svg">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/admin.css">
   </head>
-  <body >
-    <header class="site-header">
-      <div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="D'Paniagua Technology"></a><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-        <nav class="nav-links" id="navLinks"><a href="index.html">Inicio</a><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="tablets.html">Tablets</a><a href="televisores.html">TV</a><a href="electrodomesticos.html">Hogar</a><a href="accesorios.html">Accesorios</a><a href="ofertas.html">Ofertas</a><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a>
-        </nav>
-        <div class="nav-actions"><a class="login-link small" href="login.html">Entrar</a><a class="icon-btn" href="carrito.html" aria-label="Carrito">🛒<span class="cart-count" data-cart-count>0</span></a>
+
+  <body class="admin-login-page">
+    
+    <main class="admin-login-wrap">
+        
+      <section class="panel admin-login-card">
+            <a href="../index.html" class="admin-login-brand">
+                <img src="../assets/img/logo.svg" alt="D'Paniagua Technology">
+            </a>
+            <span class="eyebrow">Área privada</span>
+            
+        <h1>Acceso de administrador
+        </h1>
+
+            
+        <p>Inicia sesión con tu cuenta autorizada para gestionar la tienda.
+        </p>
+
+
+            
+        <form id="adminLoginForm">
+                
+          <div class="field">
+                    
+            <label for="adminEmail">Correo electrónico
+            </label>
+
+                    <input id="adminEmail" name="email" type="email" required autocomplete="username" placeholder="admin@correo.com">
+                
+          </div>
+
+                
+          <div class="field">
+                    
+            <label for="adminPassword">Contraseña
+            </label>
+
+                    <input id="adminPassword" name="password" type="password" required autocomplete="current-password" placeholder="Tu contraseña">
+                
+          </div>
+
+                <button class="primary admin-login-submit" type="submit">Entrar como administrador</button>
+            
+        </form>
+
+
+            
+        <div id="adminLoginNotice" class="notice" role="status" aria-live="polite">
+                Acceso protegido mediante Supabase. Solo las cuentas con rol administrador pueden entrar.
+            
         </div>
-      </div>
-    </header>
-    <main>
-      <section class="page-hero">
-        <div class="container"><span class="eyebrow">Cuenta segura</span>
-          <h1>Iniciar sesión
-          </h1>
-          <p>Accede a tu cuenta para gestionar pedidos y publicar reseñas.
-          </p>
-        </div>
+
+            <a class="admin-back-link" href="../index.html">← Volver a la tienda</a>
+        
       </section>
-      <section class="section">
-        <div class="container" style="max-width:520px">
-          <form id="loginForm" class="panel">
-            <div id="nameField" class="field hidden">
-              <label for="fullName">Nombre completo
-              </label>
-<input id="fullName" name="full_name" type="text" minlength="2" autocomplete="name" placeholder="Tu nombre">
-            </div>
 
-            <div class="field">
-              <label for="email">Correo electrónico
-              </label>
-<input id="email" name="email" type="email" required autocomplete="email" placeholder="nombre@correo.com">
-            </div>
-
-            <div class="field">
-              <label for="password">Contraseña
-              </label>
-<input id="password" name="password" type="password" required minlength="6" autocomplete="current-password" placeholder="Mínimo 6 caracteres">
-            </div>
-
-<button id="authSubmit" class="primary" style="width:100%" type="submit">Entrar</button>
-            <p class="small" id="authMessage" data-auth-required>¿No tienes cuenta? Puedes crear una gratis.
-            </p>
-
-<button id="authModeToggle" class="btn btn-outline" type="button" style="width:100%">Crear una cuenta</button>
-            <p class="small" id="authFeedback" role="status" aria-live="polite">
-            </p>
-
-          </form>
-        </div>
-      </section>
+    
     </main>
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div><img class="footer-logo" src="assets/img/logo.svg" alt="D'Paniagua Technology">
-            <p>Tecnología para avanzar. Una experiencia de compra clara, moderna y confiable.
-            </p>
 
-          </div>
-          <div>
-            <h3>Explorar
-            </h3>
-            <div class="footer-links"><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="televisores.html">Televisores</a><a href="ofertas.html">Ofertas</a>
-            </div>
-          </div>
-          <div>
-            <h3>Ayuda
-            </h3>
-            <div class="footer-links"><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a><a href="login.html">Mi cuenta</a>
-            </div>
-          </div>
-          <div>
-            <h3>Contacto</h3>
-            <div class="footer-links">
-              <a href="contacto.html">Formulario de contacto</a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom"><span>© <span id="year"></span> D'Paniagua Technology · Proyecto académico</span><span>Precios y productos de demostración, no inventario real.</span>
-        </div>
-      </div>
-    </footer>
-    <div id="toast" class="toast" role="status" aria-live="polite">
-    </div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase.js"></script><script src="js/catalogo-demo.js"></script><script src="js/global.js"></script><script src="js/carrito.js"></script><script src="js/autenticacion.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/admin-login.js"></script>
   </body>
+
 </html>
