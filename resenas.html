@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="D'Paniagua Technology: tienda de tecnología y electrodomésticos."><title>Reseñas | D'Paniagua Technology</title><link rel="icon" href="assets/img/logo.svg"><link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/resenas.css">
+  </head>
+  <body >
+    <header class="site-header">
+      <div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="D'Paniagua Technology"></a><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <nav class="nav-links" id="navLinks"><a href="index.html">Inicio</a><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="tablets.html">Tablets</a><a href="televisores.html">TV</a><a href="electrodomesticos.html">Hogar</a><a href="accesorios.html">Accesorios</a><a href="ofertas.html">Ofertas</a><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="nav-actions"><a class="login-link small" href="login.html">Entrar</a><a class="icon-btn" href="carrito.html" aria-label="Carrito">🛒<span class="cart-count" data-cart-count>0</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container"><span class="eyebrow">Comunidad</span>
+          <h1>Reseñas de clientes
+          </h1>
+          <p>Comparte tu experiencia. Las nuevas reseñas se envían para moderación y solo se publican después de revisión.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container split">
+          <div class="panel"><span class="eyebrow">Tu opinión cuenta</span>
+            <h2>Escribe una reseña
+            </h2>
+            <form id="reviewForm">
+              <div class="field">
+                <label for="display_name">Nombre para mostrar
+                </label>
+<input id="display_name" name="display_name" minlength="2" maxlength="80" required>
+              </div>
+              <div class="field">
+                <label for="rating">Calificación
+                </label>
+<select id="rating" name="rating" required><option value="">Selecciona estrellas</option><option value="5">★★★★★ — Excelente</option><option value="4">★★★★☆ — Muy bueno</option><option value="3">★★★☆☆ — Bueno</option><option value="2">★★☆☆☆ — Regular</option><option value="1">★☆☆☆☆ — Malo</option></select>
+              </div>
+              <div class="field">
+                <label for="body">Tu opinión
+                </label>
+<textarea id="body" name="body" minlength="10" maxlength="1200" required></textarea>
+              </div>
+<button class="primary" type="submit">Enviar reseña</button>
+              <p class="small" data-demo-note>Para publicar debes configurar Supabase e iniciar sesión. Los ejemplos no son reseñas verificadas.
+              </p>
+            </form>
+          </div>
+          <div>
+            <div class="panel" style="margin-bottom:18px"><span class="eyebrow">Valoración general</span>
+              <h2 id="reviewAverage">—
+              </h2>
+              <p id="reviewCount" class="small">Cargando reseñas...
+              </p>
+            </div>
+            <div id="reviewsList" class="grid" style="grid-template-columns:1fr">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div><img class="footer-logo" src="assets/img/logo.svg" alt="D'Paniagua Technology">
+            <p>Tecnología para avanzar. Una experiencia de compra clara, moderna y confiable.
+            </p>
+
+          </div>
+          <div>
+            <h3>Explorar
+            </h3>
+            <div class="footer-links"><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="televisores.html">Televisores</a><a href="ofertas.html">Ofertas</a>
+            </div>
+          </div>
+          <div>
+            <h3>Ayuda
+            </h3>
+            <div class="footer-links"><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a><a href="login.html">Mi cuenta</a>
+            </div>
+          </div>
+          <div>
+            <h3>Contacto</h3>
+            <div class="footer-links">
+              <a href="contacto.html">Formulario de contacto</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom"><span>© <span id="year"></span> D'Paniagua Technology · Proyecto académico</span><span>Precios y productos de demostración, no inventario real.</span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase.js"></script><script src="js/catalogo-demo.js"></script><script src="js/global.js"></script><script src="js/carrito.js"></script><script src="js/resenas.js"></script>
+  </body>
+</html>

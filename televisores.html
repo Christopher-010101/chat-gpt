@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="D'Paniagua Technology: tienda de tecnología y electrodomésticos."><title>Televisores | D'Paniagua Technology</title><link rel="icon" href="assets/img/logo.svg"><link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/productos.css">
+  </head>
+  <body data-category="televisores">
+    <header class="site-header">
+      <div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="D'Paniagua Technology"></a><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <nav class="nav-links" id="navLinks"><a href="index.html">Inicio</a><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="tablets.html">Tablets</a><a href="televisores.html">TV</a><a href="electrodomesticos.html">Hogar</a><a href="accesorios.html">Accesorios</a><a href="ofertas.html">Ofertas</a><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="nav-actions"><a class="login-link small" href="login.html">Entrar</a><a class="icon-btn" href="carrito.html" aria-label="Carrito">🛒<span class="cart-count" data-cart-count>0</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container"><span class="eyebrow">Catálogo D'Paniagua</span>
+          <h1>Televisores
+          </h1>
+          <p>Imagen inmersiva y entretenimiento para tu hogar.
+          </p>
+          <p class="small">Los productos locales son datos de prueba. Con Supabase conectado, se muestran los productos publicados en la base de datos.
+          </p>
+        </div>
+      </section>
+      <section class="catalog-layout">
+        <div class="container">
+          <div class="toolbar"><input id="productSearch" placeholder="Buscar por nombre, marca o descripción..." aria-label="Buscar productos"><select id="sortProducts" aria-label="Ordenar"><option value="featured">Orden recomendado</option><option value="low">Precio: menor a mayor</option><option value="high">Precio: mayor a menor</option></select>
+          </div>
+          <div class="catalog-meta"><span id="productCount"></span><span>Precios en pesos dominicanos (RD$)</span>
+          </div>
+          <div class="grid" id="productGrid" style="margin-top:18px">
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div><img class="footer-logo" src="assets/img/logo.svg" alt="D'Paniagua Technology">
+            <p>Tecnología para avanzar. Una experiencia de compra clara, moderna y confiable.
+            </p>
+
+          </div>
+          <div>
+            <h3>Explorar
+            </h3>
+            <div class="footer-links"><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="televisores.html">Televisores</a><a href="ofertas.html">Ofertas</a>
+            </div>
+          </div>
+          <div>
+            <h3>Ayuda
+            </h3>
+            <div class="footer-links"><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a><a href="login.html">Mi cuenta</a>
+            </div>
+          </div>
+          <div>
+            <h3>Contacto</h3>
+            <div class="footer-links">
+              <a href="contacto.html">Formulario de contacto</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom"><span>© <span id="year"></span> D'Paniagua Technology · Proyecto académico</span><span>Precios y productos de demostración, no inventario real.</span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase.js"></script><script src="js/catalogo-demo.js"></script><script src="js/global.js"></script><script src="js/carrito.js"></script><script src="js/productos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="D'Paniagua Technology: tienda de tecnología y electrodomésticos."><title>Contacto | D'Paniagua Technology</title><link rel="icon" href="assets/img/logo.svg"><link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/contacto.css">
+  </head>
+  <body >
+    <header class="site-header">
+      <div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="D'Paniagua Technology"></a><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <nav class="nav-links" id="navLinks"><a href="index.html">Inicio</a><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="tablets.html">Tablets</a><a href="televisores.html">TV</a><a href="electrodomesticos.html">Hogar</a><a href="accesorios.html">Accesorios</a><a href="ofertas.html">Ofertas</a><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="nav-actions"><a class="login-link small" href="login.html">Entrar</a><a class="icon-btn" href="carrito.html" aria-label="Carrito">🛒<span class="cart-count" data-cart-count>0</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container"><span class="eyebrow">Estamos para ayudarte</span>
+          <h1>Hablemos de tecnología.
+          </h1>
+          <p>Envíanos tu consulta y te responderemos a través de los datos de contacto que configures para tu tienda.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container split">
+          <form id="contactForm" class="panel">
+            <h2>Envíanos un mensaje
+            </h2>
+            <div class="field">
+              <label>Nombre
+              </label>
+<input name="name" required minlength="2" maxlength="100">
+            </div>
+            <div class="field">
+              <label>Correo electrónico
+              </label>
+<input name="email" type="email" required>
+            </div>
+            <div class="field">
+              <label>Teléfono
+              </label>
+<input name="phone" type="tel" maxlength="30">
+            </div>
+            <div class="field">
+              <label>Asunto
+              </label>
+<input name="subject" required maxlength="150">
+            </div>
+            <div class="field">
+              <label>Mensaje
+              </label>
+<textarea name="message" required minlength="10" maxlength="3000"></textarea>
+            </div>
+<button class="primary">Enviar mensaje</button>
+            <p class="small" data-demo-note>El formulario necesita Supabase configurado para guardar mensajes.
+            </p>
+          </form>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="feature-icon" aria-hidden="true">✉</div>
+              <h3>Atención por formulario</h3>
+              <p>Usa el formulario de esta página para enviar tu consulta.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div><img class="footer-logo" src="assets/img/logo.svg" alt="D'Paniagua Technology">
+            <p>Tecnología para avanzar. Una experiencia de compra clara, moderna y confiable.
+            </p>
+
+          </div>
+          <div>
+            <h3>Explorar
+            </h3>
+            <div class="footer-links"><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="televisores.html">Televisores</a><a href="ofertas.html">Ofertas</a>
+            </div>
+          </div>
+          <div>
+            <h3>Ayuda
+            </h3>
+            <div class="footer-links"><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a><a href="login.html">Mi cuenta</a>
+            </div>
+          </div>
+          <div>
+            <h3>Contacto</h3>
+            <div class="footer-links">
+              <a href="contacto.html">Formulario de contacto</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom"><span>© <span id="year"></span> D'Paniagua Technology · Proyecto académico</span><span>Precios y productos de demostración, no inventario real.</span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase.js"></script><script src="js/catalogo-demo.js"></script><script src="js/global.js"></script><script src="js/carrito.js"></script><script src="js/contacto.js"></script>
+  </body>
+</html>

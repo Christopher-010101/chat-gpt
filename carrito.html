@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html lang="es">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Revisa tu carrito y datos de entrega."><title>Carrito | D'Paniagua Technology</title><link rel="icon" href="assets/img/logo.svg"><link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/admin.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="D'Paniagua Technology"></a><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <nav class="nav-links" id="navLinks"><a href="index.html">Inicio</a><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="tablets.html">Tablets</a><a href="televisores.html">TV</a><a href="electrodomesticos.html">Hogar</a><a href="accesorios.html">Accesorios</a><a href="ofertas.html">Ofertas</a><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="nav-actions"><a class="login-link small" href="login.html">Entrar</a><a class="icon-btn" href="carrito.html" aria-label="Carrito">🛒<span class="cart-count" data-cart-count>0</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container"><span class="eyebrow">Tu selección</span>
+          <h1>Carrito de compras
+          </h1>
+          <p>Confirma artículos y dirección. El inventario se valida al crear el pedido.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container checkout-layout">
+  
+          <div>
+            <section class="panel">
+              <div class="admin-section-head">
+                <div>
+                  <h2>Productos seleccionados
+                  </h2>
+                  <p class="small muted">Puedes actualizar cantidades antes de continuar.
+                  </p>
+                </div>
+<a href="ofertas.html" class="btn btn-outline btn-small">Ver ofertas</a>
+              </div>
+              <div id="cartItems">
+              </div>
+            </section>
+
+    
+            <section class="panel checkout-panel">
+              <h2>Dirección de entrega
+              </h2>
+              <p class="small muted">Usaremos estos datos para coordinar y guardar el pedido.
+              </p>
+              <form id="deliveryForm" class="admin-form-grid">
+      
+                <label class="field"><span>Nombre completo</span><input name="full_name" autocomplete="name" required maxlength="120">
+                </label>
+                <label class="field"><span>Teléfono</span><input name="phone" autocomplete="tel" required maxlength="40">
+                </label>
+                <label class="field"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" required maxlength="254">
+                </label>
+
+      
+                <label class="field"><span>Provincia</span><input name="province" required maxlength="100">
+                </label>
+                <label class="field"><span>Municipio</span><input name="municipality" required maxlength="100">
+                </label>
+                <label class="field"><span>Sector</span><input name="sector" required maxlength="120">
+                </label>
+
+      
+                <label class="field"><span>Calle</span><input name="street" required maxlength="180">
+                </label>
+                <label class="field"><span>Número de casa o apartamento</span><input name="house_number" required maxlength="80">
+                </label>
+                <label class="field"><span>Referencia para localizar</span><input name="reference" required maxlength="240">
+                </label>
+
+      
+                <label class="field field-wide"><span>Instrucciones adicionales</span><textarea name="instructions" rows="2" maxlength="500"></textarea>
+                </label>
+
+    
+              </form>
+            </section>
+
+  
+          </div>
+
+  
+          <aside class="panel checkout-summary">
+            <h2>Resumen del pedido
+            </h2>
+            <p><span id="cartUnits">0</span> artículo(s)
+            </p>
+            <div class="checkout-totals">
+              <div><span>Subtotal</span><strong id="cartSubtotal">RD$0</strong>
+              </div>
+              <div><span>Descuentos</span><strong id="cartDiscount">RD$0</strong>
+              </div>
+              <div><span>Envío</span><strong id="shippingCost">RD$0</strong>
+              </div>
+              <div class="checkout-grand"><span>Total a pagar</span><strong id="cartTotal">RD$0</strong>
+              </div>
+            </div>
+            <p class="small muted">No hay una tarifa de envío configurada; por ahora el pedido registra RD$0 de envío. El pago contra entrega queda pendiente hasta validarse.
+            </p>
+
+    
+            <h3>Método de pago
+            </h3>
+            <div class="field">
+              <label><input type="radio" name="paymentMethod" value="cash_on_delivery" checked> Pago contra entrega
+              </label>
+            </div>
+            <div class="field">
+              <label><input type="radio" name="paymentMethod" value="paypal"> PayPal
+              </label>
+            </div>
+            <div class="field">
+              <label><input type="radio" name="paymentMethod" value="card"> Tarjeta de débito o crédito
+              </label>
+            </div>
+            <div class="field">
+              <label><input type="radio" name="paymentMethod" value="whatsapp"> Coordinar por WhatsApp
+              </label>
+            </div>
+            <p class="small muted">PayPal y tarjeta no procesan cobros hasta integrar un proveedor y su confirmación de servidor. WhatsApp solo abre una conversación; no crea un pedido.
+            </p>
+
+    <button class="primary" id="checkoutBtn" type="button" style="width:100%">Revisar pedido</button>
+            <div id="checkoutResult" class="notice hidden" role="status">
+            </div>
+
+  
+          </aside>
+
+        </div>
+      </section>
+    </main>
+
+    <dialog id="orderReview" class="admin-dialog">
+      <div class="admin-dialog-head">
+        <div><span class="eyebrow">Antes de confirmar</span>
+          <h2>Revisión del pedido
+          </h2>
+        </div>
+<button type="button" class="icon-btn" data-close-review aria-label="Cerrar">×</button>
+      </div>
+      <div id="orderReviewBody">
+      </div>
+      <div class="dialog-actions"><button type="button" class="btn-outline" data-close-review>Volver</button><button type="button" class="primary" id="confirmOrderBtn">Confirmar pedido contra entrega</button>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div><img class="footer-logo" src="assets/img/logo.svg" alt="D'Paniagua Technology">
+            <p>Tecnología para avanzar. Una experiencia de compra clara, moderna y confiable.
+            </p>
+<span class="small">D'Paniagua Technology</span>
+          </div>
+          <div>
+            <h3>Explorar
+            </h3>
+            <div class="footer-links"><a href="celulares.html">Celulares</a><a href="laptops.html">Laptops</a><a href="televisores.html">Televisores</a><a href="ofertas.html">Ofertas</a>
+            </div>
+          </div>
+          <div>
+            <h3>Ayuda
+            </h3>
+            <div class="footer-links"><a href="resenas.html">Reseñas</a><a href="contacto.html">Contacto</a><a href="login.html">Mi cuenta</a>
+            </div>
+          </div>
+          <div>
+            <h3>Entrega y pagos
+            </h3>
+            <div class="footer-links"><span>Los pagos digitales requieren confirmación del proveedor.</span><span>La dirección se guarda con el pedido.</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom"><span>© <span id="year"></span> D'Paniagua Technology</span><span>Precios en pesos dominicanos (RD$).</span>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase.js"></script><script src="js/catalogo-demo.js"></script><script src="js/global.js"></script><script src="js/pagos-config.js"></script><script src="js/carrito.js"></script>
+  </body>
+</html>

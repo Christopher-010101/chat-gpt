@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busca celulares, computadoras, electrodomésticos y accesorios en D'Paniagua Technology.">
+    <title>Todos los productos | D'Paniagua Technology</title>
+    <link rel="icon" href="assets/img/logo.svg">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/productos.css">
+  </head>
+  <body>
+    <header class="site-header solid">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo.svg" alt="D'Paniagua Technology">
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
+        <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a href="buscar.html" aria-current="page">Productos</a>
+          <a href="celulares.html">Celulares</a>
+          <a href="laptops.html">Laptops</a>
+          <a href="tablets.html">Tablets</a>
+          <a href="televisores.html">TV</a>
+          <a href="electrodomesticos.html">Hogar</a>
+          <a href="accesorios.html">Accesorios</a>
+          <a href="ofertas.html">Ofertas</a>
+          <a href="resenas.html">Reseñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="login-link small" href="login.html">Entrar</a>
+          <a class="icon-btn" href="carrito.html" aria-label="Carrito de compras">
+            🛒 <span class="cart-count" data-cart-count>0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Catálogo completo</span>
+          <h1>Encuentra tu próximo equipo</h1>
+          <p>Busca en todas las categorías, filtra por tipo y ordena los resultados por precio.</p>
+        </div>
+      </section>
+
+      <section class="catalog-layout">
+        <div class="container">
+          <form class="catalog-toolbar" id="catalogSearchForm" role="search">
+            <div class="catalog-field">
+              <label for="productSearch">Buscar productos</label>
+              <input id="productSearch" type="search" placeholder="Nombre, marca o descripción" autocomplete="off">
+            </div>
+            <div class="catalog-field">
+              <label for="categoryFilter">Categoría</label>
+              <select id="categoryFilter">
+                <option value="">Todas las categorías</option>
+              </select>
+            </div>
+            <div class="catalog-field">
+              <label for="sortProducts">Ordenar por</label>
+              <select id="sortProducts">
+                <option value="featured">Recomendados</option>
+                <option value="low">Precio: menor a mayor</option>
+                <option value="high">Precio: mayor a menor</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Buscar</button>
+          </form>
+
+          <p class="notice hidden" data-demo-note role="status">
+            Estás viendo el catálogo de demostración. Conecta Supabase para mostrar los productos publicados de la tienda.
+          </p>
+          <p class="notice" id="searchNotice" role="status" aria-live="polite"></p>
+          <div class="catalog-meta">
+            <span id="productCount" aria-live="polite">Cargando productos…</span>
+            <span>Precios en pesos dominicanos (RD$)</span>
+          </div>
+          <div class="grid" id="productGrid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img class="footer-logo" src="assets/img/logo.svg" alt="D'Paniagua Technology">
+            <p>Tecnología para avanzar. Una experiencia de compra clara, moderna y confiable.</p>
+          </div>
+          <div>
+            <h3>Explorar</h3>
+            <div class="footer-links">
+              <a href="buscar.html">Todos los productos</a>
+              <a href="ofertas.html">Ofertas</a>
+              <a href="resenas.html">Reseñas</a>
+            </div>
+          </div>
+          <div>
+            <h3>Ayuda</h3>
+            <div class="footer-links">
+              <a href="contacto.html">Formulario de contacto</a>
+              <a href="login.html">Mi cuenta</a>
+              <a href="carrito.html">Carrito</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> D'Paniagua Technology</span>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/catalogo-demo.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/buscar.js"></script>
+  </body>
+</html>
