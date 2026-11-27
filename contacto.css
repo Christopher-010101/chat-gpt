@@ -1,0 +1,10 @@
+.contact-info {
+  display:grid;
+  gap:15px
+}
+.contact-item {
+  padding:17px;
+  background:#15161c;
+  border:1px solid var(--line);
+  border-radius:14px
+}

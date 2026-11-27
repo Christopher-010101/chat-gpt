@@ -1,0 +1,12 @@
+.review-card {
+  padding:22px
+}
+.review-card header {
+  display:flex;
+  justify-content:space-between;
+  gap:15px
+}
+.review-date {
+  font-size:.78rem;
+  color:var(--muted)
+}
